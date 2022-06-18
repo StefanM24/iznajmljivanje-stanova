@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iDESIGN - Interior Design HTML Template</title>
+    <title>Log in</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -143,13 +143,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Kontakt</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Log in</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-outline-primary" href="">Home</a>
+                        <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Kontakt</a>
+                        <a class="btn btn-outline-primary disabled" href="">Log in</a>
                     </div>
                 </div>
             </div>
@@ -190,25 +190,18 @@
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="signup" id="contactForm" novalidate="novalidate">
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="name" placeholder="Ime" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="password" class="form-control p-4" id="lozinka" placeholder="Lozinka" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Naslov" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Poruka" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
+                            <p>Nemate nalog? <a href="signup.php"><b>Prijavite se</b></a></p>
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Pošalji</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Log in</button>
                             </div>
                         </form>
                     </div>
