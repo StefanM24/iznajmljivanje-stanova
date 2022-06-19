@@ -1,3 +1,17 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['email'])) {
+  	$_SESSION['msg'] = "Prvo se morate ulogovati";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,6 +150,23 @@
         </div>
     </div>
     <!-- Under Nav End -->
+
+    <? php if (isset($_SESSION['uspeh'])) : ?>
+      <div class="error uspeh" >
+      	<h3>
+          <?php 
+          	echo $_SESSION['uspeh']; 
+          	unset($_SESSION['uspeh']);
+          ?>
+      	</h3>
+      </div>
+  	<? php endif ?>
+
+    <!-- logged in user information -->
+    <? php  if (isset($_SESSION['username'])) : ?>
+    	<p>Dobrodošli <strong><? php echo $_SESSION['ime','prezime']; ?></strong></p>
+    	<p> <a href="index.php? logout='1'" style="color: red;">logout</a> </p>
+    <? php endif ?>
 
 
     <!-- Carousel Start -->

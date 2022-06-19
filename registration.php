@@ -36,7 +36,7 @@
                 array_push($errors, "Lozinka zauzeta.");
             }
         }
-        echo `Greska: $errors`
+        echo `Greska: $errors`;
         //registruj korisnika ako nema greske u formi
         if(count($errors) == 0) {
             $password = md5($password_1); //kriptovanje lozinke pre cuvanja
@@ -53,7 +53,7 @@
     //uloguj korisnika
     if(isset($_POST['login_user'])) {
         $email = mysqli_real_escape_string($db, $_POST['email']);
-        $password = mysqli_real_escape_string($db, $_POST['lozinka']);
+        $password = mysqli_real_escape_string($db, $_POST['password']);
 
         if(empty($email)) {
             array_push($errors, "Ovo polje je obavezno.");
@@ -63,15 +63,15 @@
         }
 
         if(count($errors) == 0) {
-            $password = md5($password_1);
-            $query = "SELECT * FROM stan_korisnici WHERE email='$email' AND lozinka='$password'";
+            //$password = md5($password_1);
+            $query = "SELECT * FROM stanovi_korisnici WHERE email='$email' AND lozinka='$password'";
             $results = mysqli_query($db, $query);
             if(mysqli_num_rows($results) == 1) {
                 $_SESSION['email'] = $email;
                 $_SESSION['uspeh'] = "Ulogovani ste.";
                 header('location: index.php');
             }else {
-                array_push($errors, "Pogrešan email/lozinka.";)
+                array_push($errors, "Pogrešan email/lozinka.");
             }
         }
     }

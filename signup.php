@@ -193,7 +193,7 @@
                     <div class="contact-form">
                         <div id="success"></div>
                         <form  method="post" action="registration.php" name="signup" id="signupForm" novalidate="novalidate">
-                            <?php include(errors.php); ?>
+                            <? php include(errors.php); ?>
                             <div class="control-group">
                                 <input type="text" class="form-control p-4" id="ime" name="ime" placeholder="Ime" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
