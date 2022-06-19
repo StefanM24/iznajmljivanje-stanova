@@ -1,3 +1,5 @@
+<?php include('registration.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -190,18 +192,23 @@
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="signup" id="contactForm" novalidate="novalidate">
+                        <form method="post" action="login.php" name="login" id="loginForm" novalidate="novalidate">
+                            <?php include(errors.php); ?>
                             <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Ovo polje je obavezno" />
+                                <input type="email" class="form-control p-4" name="email" id="email" placeholder="Email" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="password" class="form-control p-4" id="lozinka" placeholder="Lozinka" required="required" data-validation-required-message="Ovo polje je obavezno" />
+                                <input type="password" class="form-control p-4" name="password" id="password" placeholder="Lozinka" required="required" data-validation-required-message="Ovo polje je obavezno" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <input type="checkbox" onclick="showPassword();">  Prikaži lozinku</input>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <p>Nemate nalog? <a href="signup.php"><b>Prijavite se</b></a></p>
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Log in</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton" name="login_user">Log in</button>
                             </div>
                         </form>
                     </div>
@@ -290,6 +297,21 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Prikazi lozinku -->
+    <script type="text/javascript">
+        function showPassword() {
+            var password=document.getElementById('password');
+            if(password.type=='password')
+            {
+                password.type='text';
+            }
+            else
+            {
+                password.type='password';
+            }
+        }
+    </script>
 </body>
 
 </html>
