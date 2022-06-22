@@ -231,7 +231,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6 pr-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Awesome Services</h6>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naše odlične suluge</h6>
                     <h1 class="mb-4 section-title">Neke od naših ponuda</h1>
                     <p><span style="color:red">Pitati Stefana za </span> </p>
                     <a href="" class="btn btn-primary mt-3 py-2 px-4">Pogledajte više</a>
@@ -240,17 +240,17 @@
                     <div class="owl-carousel service-carousel position-relative">
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-bedroom display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Bedroom Design</h5>
+                            <h5 class="mb-3">Održavanje spavaćih soba</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-kitchen display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Kitchen Design</h5>
+                            <h5 class="mb-3">Održavanje kuhinje</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-bathroom display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Bathroom Design</h5>
+                            <h5 class="mb-3">Održavanje kupatila</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                     </div>
@@ -292,7 +292,7 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Projects</h6>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Neša dela</h6>
                     <h1 class="mb-4">Neki od naših stanova</h1>
                 </div>
             </div>
@@ -426,8 +426,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="py-5 px-4 h-100 bg-primary d-flex flex-column align-items-center justify-content-center">
-                        <h6 class="text-white font-weight-normal text-uppercase mb-3">Our Team</h6>
-                        <h1 class="mb-0 text-center">Meet Our Team Members</h1>
+                        <h6 class="text-white font-weight-normal text-uppercase mb-3">Naš tim</h6>
+                        <h1 class="mb-0 text-center">Upoznajte naše članove tima</h1>
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-6 p-0 py-sm-5">
@@ -442,8 +442,8 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                                <h5 class="text-white">Stefan Mihajlović</h5>
+                                <p class="m-0">Mlad, šarmantan direktor </p>
                             </div>
                         </div>
                         <div class="team d-flex flex-column text-center mx-3">
@@ -456,8 +456,8 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                                <h5 class="text-white">Nemanja Mosurović</h5>
+                                <p class="m-0">Mlad, šarmantan izvođač radova</p>
                             </div>
                         </div>
                         <div class="team d-flex flex-column text-center mx-3">
@@ -501,15 +501,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 py-5 pr-md-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Testimonial</h6>
-                    <h1 class="mb-4 section-title">What Our Clients Say</h1>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Pohvale</h6>
+                    <h1 class="mb-4 section-title">Šta naši klijenti imaju da kažu</h1>
                     <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
                         <div class="d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
                                 <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Marko Marković</h5>
+                                    <i>Mamin i tatin sin</i>
                                 </div>
                             </div>
                             <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
