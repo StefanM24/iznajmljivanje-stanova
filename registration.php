@@ -7,6 +7,9 @@
     $errors = array();
 
     $db = mysqli_connect('localhost', 'root', '', 'db1');
+    if ($db->connect_error) {
+        die("Connection failed: " . $db->connect_error);
+    }
 
     //registracija
     if (isset($_POST['reg_user'])) {
@@ -44,7 +47,7 @@
             $query = "INSERT INTO stanovi_korisnici (ime, prezime, email, lozinka) VALUES('$ime','$prezime', '$email', '$password')";
 
             mysqli_query($db, $query);
-            $_SESSION['ime'] = $ime;
+            $_SESSION['email'] = $email;
             $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
             header('location: index.php');
         }
@@ -63,7 +66,7 @@
         }
 
         if(count($errors) == 0) {
-            //$password = md5($password_1);
+            $password = md5($password);
             $query = "SELECT * FROM stanovi_korisnici WHERE email='$email' AND lozinka='$password'";
             $results = mysqli_query($db, $query);
             if(mysqli_num_rows($results) == 1) {
@@ -75,4 +78,5 @@
             }
         }
     }
-?>
+    $db->close();   
+?> 

@@ -1,14 +1,14 @@
 <?php 
   session_start(); 
 
-  if (!isset($_SESSION['email'])) {
-  	$_SESSION['msg'] = "Prvo se morate ulogovati";
-  	header('location: login.php');
-  }
+//   if (!isset($_SESSION['email'])) {
+//   	$_SESSION['msg'] = "You must log in first";
+//   	header('location: login.php');
+//   }
   if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['email']);
-    header("location: login.php");
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
   }
 ?>
 
@@ -105,7 +105,14 @@
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
-                        <a href="login.php" class="nav-item nav-link">Log in</a>
+                        <?php 
+                            if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                            }
+                            else{
+                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                            }
+                        ?>
                         <a href="signup.php" class="nav-item nav-link">Sign up</a>
                     </div>
                 </div>
@@ -114,6 +121,16 @@
     </div>
     <!-- Navbar End -->
 
+    <? php if (isset($_SESSION['uspeh'])) : ?>
+      <div class="error uspeh" >
+      	<h1>
+          <?php 
+          	//echo $_SESSION['uspeh']; 
+          	unset($_SESSION['uspeh']);
+          ?>
+      	</h1>
+      </div>
+  	<? php endif ?>
 
     <!-- Under Nav Start -->
     <div class="container-fluid bg-white py-3">
@@ -151,22 +168,7 @@
     </div>
     <!-- Under Nav End -->
 
-    <? php if (isset($_SESSION['uspeh'])) : ?>
-      <div class="error uspeh" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['uspeh']; 
-          	unset($_SESSION['uspeh']);
-          ?>
-      	</h3>
-      </div>
-  	<? php endif ?>
-
-    <!-- logged in user information -->
-    <? php  if (isset($_SESSION['username'])) : ?>
-    	<p>Dobrodošli <strong><? php echo $_SESSION['ime','prezime']; ?></strong></p>
-    	<p> <a href="index.php? logout='1'" style="color: red;">logout</a> </p>
-    <? php endif ?>
+    
 
 
     <!-- Carousel Start -->
