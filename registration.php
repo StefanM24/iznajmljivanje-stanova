@@ -99,6 +99,8 @@
         }
       }
     }
+
+
     //uloguj korisnika
     if(isset($_POST['login_user'])) {
         $email = mysqli_real_escape_string($db, $_POST['email']);
