@@ -83,15 +83,22 @@
                         <a href="service.php" class="nav-item nav-link">Usluge</a>
                         <a href="project.php" class="nav-item nav-link">Projekti</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Strane</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Mreža</a>
-                                <a href="single.html" class="dropdown-item">Blog Lista</a>
+                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                <a href="single.html" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
-                        <a href="login.php" class="nav-item nav-link">Log in</a>
+                        <?php
+                            if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                            }
+                            else{
+                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                            }
+                        ?>
                         <a href="signup.php" class="nav-item nav-link">Sign up</a>
                     </div>
                 </div>
