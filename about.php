@@ -170,9 +170,9 @@
                     </div>
                 </div>
                 <div class="col-lg-7 m-0 my-lg-5 pt-5 pb-5 pb-lg-2 pl-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naušite o nama</h6>
-                    <h1 class="mb-4 section-title">Mi smo najbolja firma za održavanje i izjamljivanje stanova u regionu.</h1>
-                    <p>Naša firma se bavi iznajmljivanjem stanova i vođenje brigu o stanovima umesto vlasnika. <span style="color:red;">Nešto dodati konsultacija Stefan</span> </p>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naučite o nama</h6>
+                    <h1 class="mb-4 section-title">Mi smo najbolja firma za održavanje i iznajmljivanje stanova u regionu.</h1>
+                    <p>Naša firma se bavi iznajmljivanjem stanova i vođenje brigu o stanovima umesto vlasnika.</p>
                     <div class="row py-2">
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-4">
@@ -195,7 +195,7 @@
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-4">
                                 <h1 class="flaticon-living-room font-weight-normal text-primary m-0 mr-3"></h1>
-                                <h5 class="text-truncate m-0">Briga stana <span style="color:red;">Pitati stefana</span> </h5>
+                                <h5 class="text-truncate m-0">Briga stana</h5>
                             </div>
                         </div>
                     </div>

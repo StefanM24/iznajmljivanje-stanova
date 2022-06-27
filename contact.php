@@ -181,7 +181,7 @@
                         <div class="d-inline-flex border border-secondary p-4">
                             <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
                             <div class="d-flex flex-column">
-                                <h4>Call Us</h4>
+                                <h4>Pozovite nas</h4>
                                 <p class="m-0 text-white">+381 060 1234567</p>
                             </div>
                         </div>

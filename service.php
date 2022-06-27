@@ -165,7 +165,7 @@
                 <div class="col-lg-6 pr-lg-5">
                     <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naše odlične usluge</h6>
                     <h1 class="mb-4 section-title">Neke od naših ponuda</h1>
-                    <p><span style="color:red">Pitati Stefana za </span> </p>
+                    <p> </p>
                     <a href="" class="btn btn-primary mt-3 py-2 px-4">Pogledajte više</a>
                 </div>
                 <div class="col-lg-6 p-0 pt-5 pt-lg-0">
