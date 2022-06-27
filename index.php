@@ -460,34 +460,6 @@
                                 <p class="m-0">Mlad, šarmantan izvođač radova</p>
                             </div>
                         </div>
-                        <div class="team d-flex flex-column text-center mx-3">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
-                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
-                            </div>
-                        </div>
-                        <div class="team d-flex flex-column text-center mx-3">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
-                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -518,8 +490,8 @@
                             <div class="d-flex align-items-center mb-3">
                                 <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Mišković</h5>
+                                    <i>Profesija- Mišković</i>
                                 </div>
                             </div>
                             <p class="m-0">Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
@@ -542,8 +514,8 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Blog</h6>
-                    <h1 class="mb-4">Read The Latest News & Articles From Our Blog</h1>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naš blog</h6>
+                    <h1 class="mb-4">Čitajte najnivije vesti i članke na našem blogu</h1>
                 </div>
             </div>
             <div class="row pb-3">
@@ -608,10 +580,10 @@
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
+                <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -620,7 +592,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Quick Links</h4>
+                <h4 class="text-primary mb-4">Brzi Linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -630,7 +602,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
+                <h4 class="text-primary mb-4">Popularni linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -640,24 +612,24 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Newsletter</h4>
+                <h4 class="text-primary mb-4">Bilten</h4>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0" placeholder="Vaše ime" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0" placeholder="Vaš email" required="required" />
                     </div>
                     <div>
-                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Prijavi se</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="container border-top border-secondary pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="#">iznajmiSTAN</a>. All Rights Reserved. Designed by programer duo Nemanja&Stefan.
+
             </p>
         </div>
     </div>
