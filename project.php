@@ -110,7 +110,7 @@
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Naš ofis</h5>
-                            <p class="m-0">Knez Mihajlova 12, Beograd</p>
+                            <p class="m-0">Beogradska 25, Vračar, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Beogradska 25, Vračar, Beograd</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
                 <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">

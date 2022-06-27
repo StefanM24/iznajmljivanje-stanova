@@ -110,7 +110,7 @@
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Naš ofis</h5>
-                            <p class="m-0">Knez Mihajlova 12, Beograd</p>
+                            <p class="m-0">Beogradska 25, Vračar, Beograd</p>
                         </div>
                     </div>
                 </div>
