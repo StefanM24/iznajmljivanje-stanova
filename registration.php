@@ -12,9 +12,7 @@
     }
 
     //registracija ljudi koji ne brinu o stanovima
-    if ($_POST['vlasnik'])
-    {
-      if (isset($_POST['reg_user'])) {
+      if (isset($_POST['reg_user']) && $_POST['vlasnik']) {
         $ime = mysqli_real_escape_string($db, $_POST['ime']);
         $prezime = mysqli_real_escape_string($db, $_POST['prezime']);
         $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -54,11 +52,11 @@
             header('location: index.php');
         }
       }
-    }
+
+
+
     //registracija ljudi koji traze stan
-    else ($_POST['stanar'])
-    {
-      if (isset($_POST['reg_user'])) {
+      if (isset($_POST['reg_user']) && $_POST['stanar']) {
         $ime = mysqli_real_escape_string($db, $_POST['ime']);
         $prezime = mysqli_real_escape_string($db, $_POST['prezime']);
         $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -98,7 +96,6 @@
             header('location: index.php');
         }
       }
-    }
 
 
     //uloguj korisnika
