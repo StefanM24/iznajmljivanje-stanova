@@ -14,7 +14,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -194,6 +194,12 @@
                         <div id="success"></div>
                         <form  method="post" action="registration.php" name="signup" id="signupForm" novalidate="novalidate">
                             <? php include(errors.php); ?>
+                            <div class="control-group">
+                                <label>Odaberite vaš korisnički status</label><br>
+                                <input type="radio" class="" id="vlasnik" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" >Vlasnik stana
+                                <input type="radio" class="" id="stanar" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" >Stanar
+                                <p class="help-block text-danger"></p>
+                            </div>
                             <div class="control-group">
                                 <input type="text" class="form-control p-4" id="ime" name="ime" placeholder="Ime" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
