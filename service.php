@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iDESIGN - Interior Design HTML Template</title>
+    <title>Izdavanje stanova</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -12,7 +12,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,11 +35,11 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">FAQs</a>
+                        <a class="text-white pr-3" href="">Pitanja i odgovori</a>
                         <span class="text-white">|</span>
-                        <a class="text-white px-3" href="">Help</a>
+                        <a class="text-white px-3" href="">Pomoć</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
+                        <a class="text-white pl-3" href="">Podrška</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -83,10 +83,10 @@
                         <a href="service.php" class="nav-item nav-link">Usluge</a>
                         <a href="project.php" class="nav-item nav-link">Projekti</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Strane</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="blog.html" class="dropdown-item">Blog Mreža</a>
+                                <a href="single.html" class="dropdown-item">Blog Lista</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
@@ -109,8 +109,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Our Office</h5>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h5>Naš ofis</h5>
+                            <p class="m-0">Knez Mihajlova 12, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -118,8 +118,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Email Us</h5>
-                            <p class="m-0">info@example.com</p>
+                            <h5>Naš email</h5>
+                            <p class="m-0">stefnem@example.com</p>
                         </div>
                     </div>
                 </div>
@@ -127,8 +127,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Call Us</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <h5>Kontakt telefon</h5>
+                            <p class="m-0">+381 60 1234567</p>
                         </div>
                     </div>
                 </div>
@@ -143,13 +143,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Our Services</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Naše Usluge</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-outline-primary" href="">Home</a>
+                        <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Our Services</a>
+                        <a class="btn btn-outline-primary disabled" href="">Naše Usluge</a>
                     </div>
                 </div>
             </div>
@@ -163,26 +163,26 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6 pr-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Awesome Services</h6>
-                    <h1 class="mb-4 section-title">Awesome Interior Designing Services For Your Home</h1>
-                    <p>Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
-                    <a href="" class="btn btn-primary mt-3 py-2 px-4">View More</a>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naše odlične usluge</h6>
+                    <h1 class="mb-4 section-title">Neke od naših ponuda</h1>
+                    <p><span style="color:red">Pitati Stefana za </span> </p>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">Pogledajte više</a>
                 </div>
                 <div class="col-lg-6 p-0 pt-5 pt-lg-0">
                     <div class="owl-carousel service-carousel position-relative">
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-bedroom display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Bedroom Design</h5>
+                            <h5 class="mb-3">Održavanje spavaćih soba</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-kitchen display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Kitchen Design</h5>
+                            <h5 class="mb-3">Održavanje kuhinje</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                         <div class="d-flex flex-column text-center bg-light mx-3 p-4">
                             <h3 class="flaticon-bathroom display-3 font-weight-normal text-primary mb-3"></h3>
-                            <h5 class="mb-3">Bathroom Design</h5>
+                            <h5 class="mb-3">Održavanje kupatila</h5>
                             <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mt-5 py-5 pr-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Why Choose Us?</h6>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Zašto izabrati nas</h6>
                     <h1 class="mb-4 section-title">25+ Years Experience In The Interior Design Industry</h1>
                     <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
                     <ul class="list-inline">
@@ -223,21 +223,16 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
-                        <img class="h-100" src="img/testimonial.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7 py-5 pl-md-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Testimonial</h6>
-                    <h1 class="mb-4 section-title">What Our Clients Say</h1>
+                <div class="col-md-7 py-5 pr-md-5">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Pohvale</h6>
+                    <h1 class="mb-4 section-title">Šta naši klijenti imaju da kažu</h1>
                     <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
                         <div class="d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
                                 <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Marko Marković</h5>
+                                    <i>Mamin i tatin sin</i>
                                 </div>
                             </div>
                             <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
@@ -246,12 +241,17 @@
                             <div class="d-flex align-items-center mb-3">
                                 <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Mišković</h5>
+                                    <i>Profesija- Mišković</i>
                                 </div>
                             </div>
                             <p class="m-0">Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
+                        <img class="h-100" src="img/testimonial.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -264,10 +264,10 @@
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
+                <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -276,7 +276,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Quick Links</h4>
+                <h4 class="text-primary mb-4">Brzi Linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -286,7 +286,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
+                <h4 class="text-primary mb-4">Popularni linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -296,24 +296,24 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Newsletter</h4>
+                <h4 class="text-primary mb-4">Bilten</h4>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0" placeholder="Vaše ime" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0" placeholder="Vaš email" required="required" />
                     </div>
                     <div>
-                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Prijavi se</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="container border-top border-secondary pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="#">iznajmiSTAN</a>. All Rights Reserved. Designed by programer duo Nemanja&Stefan.
+
             </p>
         </div>
     </div>
