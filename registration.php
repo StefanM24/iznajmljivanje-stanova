@@ -45,7 +45,7 @@
 
             mysqli_query($db, $query);
             $_SESSION['email'] = $email;
-            $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
+            $_SESSION['uspeh'] = "Uspešno ste registrovali.";
             header('location: index.php');
         }
       }
@@ -89,7 +89,7 @@
 
             mysqli_query($db, $query);
             $_SESSION['email'] = $email;
-            $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
+            $_SESSION['uspeh'] = "Uspešno ste registrovali.";
             header('location: index.php');
         }
       }
@@ -113,12 +113,16 @@
             $query2 = "SELECT * FROM izdavaci_stanova WHERE email='$email' AND lozinka='$password'";
             $results1 = mysqli_query($db, $query1);
             $results2 = mysqli_query($db,$query2);
+            //pokušati da se nađe način kako sad iz rezultata da se izmu podaci
             if(mysqli_num_rows($results1) == 1 || mysqli_num_rows($results2) == 1 ) {
+
                 $_SESSION['email'] = $email;
                 $_SESSION['uspeh'] = "Ulogovani ste.";
+
                 header('location: index.php');
             }else {
                 array_push($errors, "Pogrešan email/lozinka.");
+
             }
         }
     }

@@ -93,13 +93,14 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
                         <?php
+
                             if(isset($_SESSION["email"])) {
                                 echo '<p class="nav-item nav-link">Dobrodosli<br></p>';
                             }

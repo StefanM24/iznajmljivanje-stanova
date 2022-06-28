@@ -111,8 +111,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Our Office</h5>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h5>Naš ofis</h5>
+                            <p class="m-0">Beogradska 25, Vračar, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -120,8 +120,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Email Us</h5>
-                            <p class="m-0">info@example.com</p>
+                            <h5>Naš email</h5>
+                            <p class="m-0">stefnem@example.com</p>
                         </div>
                     </div>
                 </div>
@@ -129,8 +129,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Call Us</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <h5>Kontak nas</h5>
+                            <p class="m-0">+381 60 1234567</p>
                         </div>
                     </div>
                 </div>
@@ -145,13 +145,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Sign up</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Registruj se </h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
                         <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Sign up</a>
+                        <a class="btn btn-outline-primary disabled" href="">Registruj se</a>
                     </div>
                 </div>
             </div>
@@ -169,22 +169,22 @@
                         <div class="d-inline-flex border border-secondary p-4 mb-4">
                             <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
                             <div class="d-flex flex-column">
-                                <h4>Our Office</h4>
-                                <p class="m-0 text-white">123 Street, New York, USA</p>
+                                <h4>Naš ofis</h4>
+                                <p class="m-0 text-white">Beogradska 25, Vračar, Beograd</p>
                             </div>
                         </div>
                         <div class="d-inline-flex border border-secondary p-4 mb-4">
                             <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
                             <div class="d-flex flex-column">
-                                <h4>Email Us</h4>
-                                <p class="m-0 text-white">info@example.com</p>
+                                <h4>Naš email</h4>
+                                <p class="m-0 text-white">stefnem@example.com</p>
                             </div>
                         </div>
                         <div class="d-inline-flex border border-secondary p-4">
                             <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
                             <div class="d-flex flex-column">
-                                <h4>Call Us</h4>
-                                <p class="m-0 text-white">+012 345 6789</p>
+                                <h4>KOntakt telefon</h4>
+                                <p class="m-0 text-white">+381 60 1234567</p>
                             </div>
                         </div>
                     </div>
@@ -196,8 +196,8 @@
                             <? php include(errors.php); ?>
                             <div class="control-group">
                                 <label>Odaberite vaš korisnički status</label><br>
-                                <input type="radio" class="" id="vlasnik" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" >Vlasnik stana
-                                <input type="radio" class="" id="stanar" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" >Stanar
+                                <input type="radio" class="" id="vlasnik" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Vlasnik stana
+                                <input type="radio" class="" id="stanar" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Stanar
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -238,10 +238,10 @@
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
+                <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -250,7 +250,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Quick Links</h4>
+                <h4 class="text-primary mb-4">Brzi Linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -260,7 +260,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
+                <h4 class="text-primary mb-4">Popularni linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -270,24 +270,24 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Newsletter</h4>
+                <h4 class="text-primary mb-4">Bilten</h4>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0" placeholder="Vaše ime" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0" placeholder="Vaš email" required="required" />
                     </div>
                     <div>
-                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Prijavi se</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="container border-top border-secondary pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="#">iznajmiSTAN</a>. All Rights Reserved. Designed by programer duo Nemanja&Stefan.
+
             </p>
         </div>
     </div>
