@@ -1,5 +1,5 @@
 <?php
-  session_start(); 
+  session_start();
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['email']);
@@ -101,13 +101,21 @@
                         <a href="about.php" class="nav-item nav-link">O nama</a>
                         <?php
                             if(isset($_SESSION["email"])) {
-                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                                echo '<p class="nav-item nav-link">Dobrodosli<br></p>';
                             }
                             else{
                                 echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
                             }
                         ?>
-                        <a href="signup.php" class="nav-item nav-link">Sign up</a>
+                        <?php
+                            if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                            }
+                            else{
+                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                            }
+                        ?>
+
                     </div>
                 </div>
             </nav>

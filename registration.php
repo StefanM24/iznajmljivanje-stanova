@@ -1,15 +1,12 @@
 <?php
     session_start();
-
+    // include('models\config.php');
+    include('models\konfigl.php');
     $ime = "";
     $prezime = "";
     $email = "";
     $errors = array();
 
-    $db = mysqli_connect('localhost', 'root', '', 'db1');
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
 
     //registracija ljudi koji ne brinu o stanovima
       if (isset($_POST['reg_user']) && $_POST['vlasnik']) {
