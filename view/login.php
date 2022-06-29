@@ -1,4 +1,4 @@
-<?php include('registration.php')?>
+<?php include('kontroler\registration.php')?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -128,8 +128,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Our Office</h5>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h5>Naš ofis</h5>
+                            <p class="m-0">Beogradska 25, Vračar, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -137,8 +137,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Email Us</h5>
-                            <p class="m-0">info@example.com</p>
+                            <h5>Naš email</h5>
+                            <p class="m-0">stefnem@example.com</p>
                         </div>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Call Us</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <h5>Kontak nas</h5>
+                            <p class="m-0">+381 60 1234567</p>
                         </div>
                     </div>
                 </div>
@@ -181,36 +181,36 @@
     <div class="container-fluid bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Our Office</h4>
-                                <p class="m-0 text-white">123 Street, New York, USA</p>
-                            </div>
-                        </div>
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Email Us</h4>
-                                <p class="m-0 text-white">info@example.com</p>
-                            </div>
-                        </div>
-                        <div class="d-inline-flex border border-secondary p-4">
-                            <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Call Us</h4>
-                                <p class="m-0 text-white">+012 345 6789</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div class="col-lg-5">
+                  <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                      <div class="d-inline-flex border border-secondary p-4 mb-4">
+                          <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
+                          <div class="d-flex flex-column">
+                              <h4>Naš ofis</h4>
+                              <p class="m-0 text-white">Beogradska 25, Vračar, Beograd</p>
+                          </div>
+                      </div>
+                      <div class="d-inline-flex border border-secondary p-4 mb-4">
+                          <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
+                          <div class="d-flex flex-column">
+                              <h4>Naš email</h4>
+                              <p class="m-0 text-white">stefnem@example.com</p>
+                          </div>
+                      </div>
+                      <div class="d-inline-flex border border-secondary p-4">
+                          <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
+                          <div class="d-flex flex-column">
+                              <h4>Kontakt telefon</h4>
+                              <p class="m-0 text-white">+381 60 1234567</p>
+                          </div>
+                      </div>
+                  </div>
+               </div>
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
                         <form method="post" action="login.php" name="login" id="loginForm" novalidate="novalidate">
-                            <? php include(errors.php); ?>
+                            <? php include('kontroler\errors.php'); ?>
                             <div class="control-group">
                                 <input type="email" class="form-control p-4" name="email" id="email" placeholder="Email" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
