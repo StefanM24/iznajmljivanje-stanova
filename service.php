@@ -110,7 +110,8 @@
                         <?php
 
                             if(isset($_SESSION["email"])) {
-                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['email'].'</p>';
+                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['ime'].' '.$_SESSION['prezime'].'</p>';
+
                             }
                             else{
                                 echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
