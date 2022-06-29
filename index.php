@@ -100,15 +100,6 @@
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
                         <?php
-
-                            if(isset($_SESSION["email"])) {
-                                echo '<p class="nav-item nav-link">Dobrodosli<br></p>';
-                            }
-                            else{
-                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
-                            }
-                        ?>
-                        <?php
                             if(isset($_SESSION["email"])) {
                                 echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
                             }
@@ -116,6 +107,16 @@
                                 echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
                             }
                         ?>
+                        <?php
+
+                            if(isset($_SESSION["email"])) {
+                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['email'].'</p>';
+                            }
+                            else{
+                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                            }
+                        ?>
+
 
                     </div>
                 </div>

@@ -1,9 +1,17 @@
+<?php
+  session_start();
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>iDESIGN - Interior Design HTML Template</title>
+    <title>Izdavanje stanova</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -12,7 +20,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,11 +43,11 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">FAQs</a>
+                        <a class="text-white pr-3" href="">Pitanja i odgovori</a>
                         <span class="text-white">|</span>
-                        <a class="text-white px-3" href="">Help</a>
+                        <a class="text-white px-3" href="">Pomoć</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
+                        <a class="text-white pl-3" href="">Podrška</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -71,7 +79,7 @@
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container position-relative" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="" class="navbar-brand">
+                <a href="" class="navbar-brand">
                     <h1 class="m-0 display-5 text-white"><span class="text-primary">iznajmi</span>STAN</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -85,14 +93,31 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
-                        <a href="login.php" class="nav-item nav-link">Log in</a>
-                        <a href="signup.php" class="nav-item nav-link">Sign up</a>
+                        <?php
+                            if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                            }
+                            else{
+                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                            }
+                        ?>
+                        <?php
+
+                            if(isset($_SESSION["email"])) {
+                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['email'].'</p>';
+                            }
+                            else{
+                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                            }
+                        ?>
+
+
                     </div>
                 </div>
             </nav>
@@ -143,13 +168,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Our Blog</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Naš Blog</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-outline-primary" href="">Home</a>
+                        <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Our Blog</a>
+                        <a class="btn btn-outline-primary disabled" href="">Naš Blog</a>
                     </div>
                 </div>
             </div>
@@ -301,10 +326,10 @@
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
+                <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -313,7 +338,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Quick Links</h4>
+                <h4 class="text-primary mb-4">Brzi Linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -323,7 +348,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
+                <h4 class="text-primary mb-4">Popularni linkovi</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
@@ -333,24 +358,24 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Newsletter</h4>
+                <h4 class="text-primary mb-4">Bilten</h4>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                        <input type="text" class="form-control border-0" placeholder="Vaše ime" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0" placeholder="Vaš email" required="required" />
                     </div>
                     <div>
-                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Prijavi se</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="container border-top border-secondary pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="#">iznajmiSTAN</a>. All Rights Reserved. Designed by programer duo Nemanja&Stefan.
+
             </p>
         </div>
     </div>

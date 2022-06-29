@@ -1,11 +1,18 @@
 <?php include('registration.php')?>
-
+<?php
+  session_start();
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Log in</title>
+    <title>Izdavanje stanova</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -37,11 +44,11 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">FAQs</a>
+                        <a class="text-white pr-3" href="">Pitanja i odgovori</a>
                         <span class="text-white">|</span>
-                        <a class="text-white px-3" href="">Help</a>
+                        <a class="text-white px-3" href="">Pomoć</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
+                        <a class="text-white pl-3" href="">Podrška</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -87,14 +94,31 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Kontakt</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
-                        <a href="login.php" class="nav-item nav-link">Log in</a>
-                        <a href="signup.php" class="nav-item nav-link">Sign up</a>
+                        <?php
+                            if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                            }
+                            else{
+                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                            }
+                        ?>
+                        <?php
+
+                            if(isset($_SESSION["email"])) {
+                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['email'].'</p>';
+                            }
+                            else{
+                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                            }
+                        ?>
+
+
                     </div>
                 </div>
             </nav>
