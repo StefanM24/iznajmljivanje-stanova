@@ -1,6 +1,11 @@
-<?php include('kontroler\registration.php') ?>
-
-
+<?php
+  session_start();
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,33 +87,34 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Početna</a>
-                        <a href="service.php" class="nav-item nav-link">Usluge</a>
-                        <a href="project.php" class="nav-item nav-link">Projekti</a>
+                        <a href="..\index.php" class="nav-item nav-link active">Početna</a>
+                        <a href="view\service.php" class="nav-item nav-link">Usluge</a>
+                        <a href="view\project.php" class="nav-item nav-link">Projekti</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
-                                <a href="single.php" class="dropdown-item">Blog Detail</a>
+                                <a href="view\blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="view\view\single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Kontakt</a>
-                        <a href="about.php" class="nav-item nav-link">O nama</a>
+                        <a href="view\contact.php" class="nav-item nav-link">Kontakt</a>
+                        <a href="view\about.php" class="nav-item nav-link">O nama</a>
                         <?php
                             if(isset($_SESSION["email"])) {
                                 echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
                             }
                             else{
-                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                                echo '<a href="view\signup.php" class="nav-item nav-link">Sign up</a>';
                             }
                         ?>
                         <?php
 
                             if(isset($_SESSION["email"])) {
-                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['email'].'</p>';
+                                echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['ime'].' '.$_SESSION['prezime'].'</p>';
+
                             }
                             else{
-                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                                echo '<a href="view\login.php" class="nav-item nav-link">Log in</a>';
                             }
                         ?>
 
@@ -147,7 +153,7 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Kontak nas</h5>
+                            <h5>Kontakt telefon</h5>
                             <p class="m-0">+381 60 1234567</p>
                         </div>
                     </div>
@@ -163,13 +169,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Registruj se </h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Naši Projekti</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
                         <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Registruj se</a>
+                        <a class="btn btn-outline-primary disabled" href="">Naši Projekti</a>
                     </div>
                 </div>
             </div>
@@ -178,78 +184,138 @@
     <!-- Page Header Start -->
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid bg-white">
-        <div class="container">
+    <!-- Projects Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col text-center mb-4">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Neša dela</h6>
+                    <h1 class="mb-4">Neki od naših stanova</h1>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Naš ofis</h4>
-                                <p class="m-0 text-white">Beogradska 25, Vračar, Beograd</p>
-                            </div>
+                <div class="col-12 text-center mb-2">
+                    <ul class="list-inline mb-4" id="portfolio-flters">
+                        <li class="btn btn-outline-primary m-1 active"  data-filter="*">All</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".first">Complete</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".second">Running</li>
+                        <li class="btn btn-outline-primary m-1" data-filter=".third">Upcoming</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mx-1 portfolio-container">
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
                         </div>
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Naš email</h4>
-                                <p class="m-0 text-white">stefnem@example.com</p>
-                            </div>
-                        </div>
-                        <div class="d-inline-flex border border-secondary p-4">
-                            <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Kontakt telefon</h4>
-                                <p class="m-0 text-white">+381 60 1234567</p>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-1.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
-                    <div class="contact-form">
-                        <div id="success"></div>
-                        <form  method="post" action="registration.php" name="signup" id="signupForm" novalidate="novalidate">
-                            <? php include('kontroler\errors.php'); ?>
-                            <div class="control-group">
-                                <label>Odaberite vaš korisnički status</label><br>
-                                <input type="radio" class="" id="vlasnik" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Vlasnik stana
-                                <input type="radio" class="" id="stanar" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Stanar
-                                <p class="help-block text-danger"></p>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item second">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-2.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="ime" name="ime" placeholder="Ime" required="required" data-validation-required-message="Ovo polje je obavezno" />
-                                <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-3.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="prezime" name="prezime" placeholder="Prezime" required="required" data-validation-required-message="Ovo polje je obavezno" />
-                                <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-4.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" name="email" placeholder="Email" required="required" data-validation-required-message="Ovo polje je obavezno" />
-                                <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item second">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-5.jpg" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-5.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                            <div class="control-group">
-                                <input type="password" class="form-control p-4" name="password_1" placeholder="Lozinka" required="required" data-validation-required-message="Ovo polje je obavezno" />
-                                <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="img/portfolio-6.jpg" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">Project Name</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="img/portfolio-6.jpg" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                            <div class="control-group">
-                                <input type="password" class="form-control p-4" id="passwordconfirm" name="password_2" placeholder="Potvrdite lozinku" required="required" data-validation-required-message="Ovo polje je obavezno" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="reg_user">Sign up</button>
-                            </div>
-                            <p>Već imate nalog? <a href="login.php"><b>Ulogujte se</b></a></p>
-                            <p class="help-block text-danger"></p>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Projects End -->
 
 
     <!-- Footer Start -->
@@ -257,7 +323,7 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Beogradska 25, Vračar, Beograd</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
                 <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">

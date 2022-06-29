@@ -87,24 +87,24 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Početna</a>
-                        <a href="service.php" class="nav-item nav-link">Usluge</a>
-                        <a href="project.php" class="nav-item nav-link">Projekti</a>
+                        <a href="..\index.php" class="nav-item nav-link active">Početna</a>
+                        <a href="view\service.php" class="nav-item nav-link">Usluge</a>
+                        <a href="view\project.php" class="nav-item nav-link">Projekti</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
-                                <a href="single.php" class="dropdown-item">Blog Detail</a>
+                                <a href="view\blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="view\view\single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Kontakt</a>
-                        <a href="about.php" class="nav-item nav-link">O nama</a>
+                        <a href="view\contact.php" class="nav-item nav-link">Kontakt</a>
+                        <a href="view\about.php" class="nav-item nav-link">O nama</a>
                         <?php
                             if(isset($_SESSION["email"])) {
                                 echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
                             }
                             else{
-                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                                echo '<a href="view\signup.php" class="nav-item nav-link">Sign up</a>';
                             }
                         ?>
                         <?php
@@ -114,7 +114,7 @@
 
                             }
                             else{
-                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                                echo '<a href="view\login.php" class="nav-item nav-link">Log in</a>';
                             }
                         ?>
 
@@ -135,8 +135,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Our Office</h5>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h5>Naš ofis</h5>
+                            <p class="m-0">Knez Mihajlova 12, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -144,8 +144,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Email Us</h5>
-                            <p class="m-0">info@example.com</p>
+                            <h5>Naš email</h5>
+                            <p class="m-0">stefnem@example.com</p>
                         </div>
                     </div>
                 </div>
@@ -153,8 +153,8 @@
                     <div class="d-inline-flex text-left">
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
-                            <h5>Call Us</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <h5>Kontakt telefon</h5>
+                            <p class="m-0">+381 60 1234567</p>
                         </div>
                     </div>
                 </div>
@@ -169,13 +169,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Naš Blog</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Kontakt</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
                         <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Naš Blog</a>
+                        <a class="btn btn-outline-primary disabled" href="">Kontakt</a>
                     </div>
                 </div>
             </div>
@@ -184,143 +184,65 @@
     <!-- Page Header Start -->
 
 
-    <!-- Blog Start -->
-    <div class="container-fluid bg-light pt-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Blog</h6>
-                    <h1 class="mb-4">Read The Latest News & Articles From Our Blog</h1>
-                </div>
-            </div>
-            <div class="row pb-3">
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-1.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
+    <!-- Contact Start -->
+    <div class="container-fluid bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                        <div class="d-inline-flex border border-secondary p-4 mb-4">
+                            <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Naš Ofis</h4>
+                                <p class="m-0 text-white">Beogradska 25, Vračar, Beograd</p>
                             </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                        </div>
+                        <div class="d-inline-flex border border-secondary p-4 mb-4">
+                            <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Pošaljite nam email</h4>
+                                <p class="m-0 text-white">stefnem@example.com</p>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex border border-secondary p-4">
+                            <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Pozovite nas</h4>
+                                <p class="m-0 text-white">+381 060 1234567</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-2.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
+                <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="name" placeholder="Ime" required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
                             </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                            <div class="control-group">
+                                <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
                             </div>
-                        </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="subject" placeholder="Naslov" required="required" data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Poruka" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Pošalji</button>
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-3.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                            </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-2.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                            </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-3.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                            </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 mb-2">
-                        <img class="card-img-top" src="img/blog-1.jpg" alt="">
-                        <div class="card-body bg-white p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate">Diam amet eos at no eos</h5>
-                            </div>
-                            <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p>
-                            <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-4">
-                    <nav aria-label="Page navigation">
-                      <ul class="pagination justify-content-center mb-0">
-                        <li class="page-item disabled">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Contact End -->
 
 
     <!-- Footer Start -->
@@ -328,7 +250,7 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-primary mb-4">Kontaktirajte nas</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Knez Mihajlova 12, Beograd</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Beogradska 25, Vračar, Beograd</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+381 60 1234567</p>
                 <p><i class="fa fa-envelope mr-2"></i>stefnem@example.com</p>
                 <div class="d-flex justify-content-start mt-4">

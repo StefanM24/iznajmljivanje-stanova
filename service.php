@@ -87,24 +87,24 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Početna</a>
-                        <a href="service.php" class="nav-item nav-link">Usluge</a>
-                        <a href="project.php" class="nav-item nav-link">Projekti</a>
+                        <a href="..\index.php" class="nav-item nav-link active">Početna</a>
+                        <a href="view\service.php" class="nav-item nav-link">Usluge</a>
+                        <a href="view\project.php" class="nav-item nav-link">Projekti</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
-                                <a href="single.php" class="dropdown-item">Blog Detail</a>
+                                <a href="view\blog.php" class="dropdown-item">Blog Grid</a>
+                                <a href="view\view\single.php" class="dropdown-item">Blog Detail</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Kontakt</a>
-                        <a href="about.php" class="nav-item nav-link">O nama</a>
+                        <a href="view\contact.php" class="nav-item nav-link">Kontakt</a>
+                        <a href="view\about.php" class="nav-item nav-link">O nama</a>
                         <?php
                             if(isset($_SESSION["email"])) {
                                 echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
                             }
                             else{
-                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                                echo '<a href="view\signup.php" class="nav-item nav-link">Sign up</a>';
                             }
                         ?>
                         <?php
@@ -114,7 +114,7 @@
 
                             }
                             else{
-                                echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
+                                echo '<a href="view\login.php" class="nav-item nav-link">Log in</a>';
                             }
                         ?>
 
@@ -136,7 +136,7 @@
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Naš ofis</h5>
-                            <p class="m-0">Knez Mihajlova 12, Beograd</p>
+                            <p class="m-0">Beogradska 25, Vračar, Beograd</p>
                         </div>
                     </div>
                 </div>
@@ -169,13 +169,13 @@
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Kontakt</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Naše Usluge</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
                         <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Kontakt</a>
+                        <a class="btn btn-outline-primary disabled" href="">Naše Usluge</a>
                     </div>
                 </div>
             </div>
@@ -184,65 +184,106 @@
     <!-- Page Header Start -->
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid bg-white">
-        <div class="container">
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Naš Ofis</h4>
-                                <p class="m-0 text-white">Beogradska 25, Vračar, Beograd</p>
-                            </div>
-                        </div>
-                        <div class="d-inline-flex border border-secondary p-4 mb-4">
-                            <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Pošaljite nam email</h4>
-                                <p class="m-0 text-white">stefnem@example.com</p>
-                            </div>
-                        </div>
-                        <div class="d-inline-flex border border-secondary p-4">
-                            <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <div class="d-flex flex-column">
-                                <h4>Pozovite nas</h4>
-                                <p class="m-0 text-white">+381 060 1234567</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-6 pr-lg-5">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Naše odlične usluge</h6>
+                    <h1 class="mb-4 section-title">Neke od naših ponuda</h1>
+                    <p> </p>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">Pogledajte više</a>
                 </div>
-                <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
-                    <div class="contact-form">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="name" placeholder="Ime" required="required" data-validation-required-message="Please enter your name" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Naslov" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Poruka" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Pošalji</button>
-                            </div>
-                        </form>
+                <div class="col-lg-6 p-0 pt-5 pt-lg-0">
+                    <div class="owl-carousel service-carousel position-relative">
+                        <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                            <h3 class="flaticon-bedroom display-3 font-weight-normal text-primary mb-3"></h3>
+                            <h5 class="mb-3">Održavanje spavaćih soba</h5>
+                            <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
+                        </div>
+                        <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                            <h3 class="flaticon-kitchen display-3 font-weight-normal text-primary mb-3"></h3>
+                            <h5 class="mb-3">Održavanje kuhinje</h5>
+                            <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
+                        </div>
+                        <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                            <h3 class="flaticon-bathroom display-3 font-weight-normal text-primary mb-3"></h3>
+                            <h5 class="mb-3">Održavanje kupatila</h5>
+                            <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Services End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mt-5 py-5 pr-lg-5">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Zašto izabrati nas</h6>
+                    <h1 class="mb-4 section-title">25+ Years Experience In The Interior Design Industry</h1>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <ul class="list-inline">
+                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>25+ Years Experience</h5></li>
+                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Best Interior Design</h5></li>
+                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Customer Satisfaction</h5></li>
+                    </ul>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">View More</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
+                        <img class="h-100" src="img/feature.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 py-5 pr-md-5">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Pohvale</h6>
+                    <h1 class="mb-4 section-title">Šta naši klijenti imaju da kažu</h1>
+                    <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3">
+                                <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
+                                <div class="ml-3">
+                                    <h5>Marko Marković</h5>
+                                    <i>Mamin i tatin sin</i>
+                                </div>
+                            </div>
+                            <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3">
+                                <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
+                                <div class="ml-3">
+                                    <h5>Mišković</h5>
+                                    <i>Profesija- Mišković</i>
+                                </div>
+                            </div>
+                            <p class="m-0">Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
+                        <img class="h-100" src="img/testimonial.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
 
 
     <!-- Footer Start -->
