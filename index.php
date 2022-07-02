@@ -96,6 +96,7 @@
                         <a href="index.php" class="nav-item nav-link active">Početna</a>
                         <a href="service.php" class="nav-item nav-link">Usluge</a>
                         <a href="project.php" class="nav-item nav-link">Projekti</a>
+                        <a href="oglasi.php" class="nav-item nav-link">Oglasi</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
