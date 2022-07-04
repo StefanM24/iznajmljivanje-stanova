@@ -139,5 +139,25 @@
             }
         }
     }
+
+    If(isset($_POST['reg_ogl']) && $_POST['naslov']) && isset($_POST['adresa']) && isset($_POST['vrsta']) && isset($_POST['kvadratura']) &&
+    isset($_POST['sprat']) && isset($_POST['cena'])) {
+        $podaci = $_POST['naslov'] . '-' . $_POST['adresa'] . '-' . $_POST['vrsta'] . '-' . 
+        $_POST['kvadratura'] . '-' . $_POST['sprat'] . '-' . $_POST['cena'] . "\r\n";
+        $ret = file_put_contents('/Downloads/podaci.txt', $podaci, FILE_APPEND | LOCK_EX);
+        if($ret === false) {
+            die('Greška u kreiranju fajla');
+        }
+        else {
+            echo "$ret podaci prebačeni u fajl";
+        }
+    }
+    else {
+        die('no post data to process');
+    }
+
+
+
+
     $db->close();
 ?>

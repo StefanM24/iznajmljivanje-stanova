@@ -311,7 +311,7 @@
                             </div>
                             <!-- DODATI I FORMU ZA UPLOAD!!!!!!!! -->
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="reg_user">Postavi oglas</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="reg_ogl">Postavi oglas</button>
                             </div>
                             <!-- <p>Već imate nalog? <a href="login.php"><b>Ulogujte se</b></a></p> -->
                             <p class="help-block text-danger"></p>
