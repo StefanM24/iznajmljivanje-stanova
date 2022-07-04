@@ -215,8 +215,8 @@
                             <? php include('kontroler\errors.php'); ?>
                             <div class="control-group">
                                 <label>Odaberite vaš korisnički status</label><br>
-                                <input type="radio" class="" id="vlasnik" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Vlasnik stana
-                                <input type="radio" class="" id="stanar" name="korisnik"  required="required" data-validation-required-message="Ovo polje je obavezno" > Stanar
+                                <input type="radio" class="" id="vlasnik" name="korisnik"  value="vlansik" required="required" data-validation-required-message="Ovo polje je obavezno" > Vlasnik stana
+                                <input type="radio" class="" id="stanar" name="korisnik" value="vlasnik" required="required" data-validation-required-message="Ovo polje je obavezno" > Stanar
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
