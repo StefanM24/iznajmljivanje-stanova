@@ -210,7 +210,7 @@
                             </div>
                             <div class="control-group">
                                 <select class="form-control" id="vrsta" name="vrsta" required="required" data-validation-required-message="Ovo polje je obavezno">
-                                    <option selected>Vrsta stana</option>
+                                    <option selected disabled>Vrsta stana</option>
                                     <option value="garsonjera">Garsonjera</option>
                                     <option value="jednosoban">Jednosoban</option>
                                     <option value="dvosoban">Dvosoban</option>
