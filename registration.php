@@ -13,10 +13,11 @@
     }
 
     //registracija
-$korisnik=$_POST['korisnik'];
-echo "<p>{$korisnik}</p>";
+$korisnik= strval($_POST['korisnik']);
+
 //registracija ljudi koji traze stan
-if (isset($_POST['reg_user']) && $korisnik='vlasnik') {
+if (isset($_POST['reg_user']) && $korisnik == "vlasnik") {
+
    $ime = mysqli_real_escape_string($db, $_POST['ime']);
    $prezime = mysqli_real_escape_string($db, $_POST['prezime']);
    $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -38,7 +39,6 @@ if (isset($_POST['reg_user']) && $korisnik='vlasnik') {
        if($user['email'] === $email) {
            array_push($errors, "Email već registrovan.");
        }
-
        if($user['lozinka'] === $password) {
            array_push($errors, "Lozinka zauzeta.");
        }
@@ -47,19 +47,19 @@ if (isset($_POST['reg_user']) && $korisnik='vlasnik') {
    //registruj korisnika ako nema greske u formi
    if(count($errors) == 0) {
        $password = md5($password_1); //kriptovanje lozinke pre cuvanja
-
        $query = "INSERT INTO izdavaci_stanova (ime, prezime, email, lozinka) VALUES('$ime','$prezime', '$email', '$password')";
-
-       mysqli_query($db, $query);
+       mysqli_query($db, $query);   echo "greska br10";
        $_SESSION['email'] = $email;
        $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
        header('location: index.php');
    }
+
 }
 
 
+
        //registracija ljudi koji traze stan
-      if (isset($_POST['reg_user']) && $korisnik='stanar') {
+    if (isset($_POST['reg_user']) && $korisnik == 'stanar') {
           $ime = mysqli_real_escape_string($db, $_POST['ime']);
           $prezime = mysqli_real_escape_string($db, $_POST['prezime']);
           $email = mysqli_real_escape_string($db, $_POST['email']);
