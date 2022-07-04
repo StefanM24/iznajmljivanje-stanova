@@ -4,6 +4,7 @@
     $ime = "";
     $prezime = "";
     $email = "";
+    $password="";
     $errors = array();
 
     $db = mysqli_connect('localhost', 'root', '', 'db1');
@@ -18,12 +19,12 @@
         $email = mysqli_real_escape_string($db, $_POST['email']);
         $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
         $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-    
+
         if (empty($ime)) { array_push($errors, "Ime je obavezno"); }
         if (empty($prezime)) { array_push($errors, "Prezime je obavezno"); }
         if (empty($email)) { array_push($errors, "Email je obavezan"); }
-        if ($password_1 != $password_2) { 
-            array_push($errors, "Lozinke se ne poklapaju"); 
+        if ($password_1 != $password_2) {
+            array_push($errors, "Lozinke se ne poklapaju");
         }
 
         $user_check_query = "SELECT * FROM stanovi_korisnici WHERE lozinka='$password' OR email='$email' LIMIT 1";
@@ -78,5 +79,5 @@
             }
         }
     }
-    $db->close();   
-?> 
+    $db->close();
+?>
