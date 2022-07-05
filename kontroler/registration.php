@@ -110,18 +110,37 @@ if (isset($_POST['reg_user']) && $korisnik == "vlasnik") {
 
         if(count($errors) == 0) {
             $password = md5($password);
-            $query = "SELECT * FROM stanovi_korisnici WHERE email='$email' AND lozinka='$password'";
-            $results = mysqli_query($db, $query);
-            if(mysqli_num_rows($results) == 1) {
+            $query1 = "SELECT * FROM stanovi_korisnici WHERE email='$email' AND lozinka='$password'";
+            $query2 = "SELECT * FROM izdavaci_stanova WHERE email='$email' AND lozinka='$password'";
+            $results1 = mysqli_query($db, $query1);
+            $results2 = mysqli_query($db,$query2);
+            //pokušati da se nađe način kako sad iz rezultata da se izmu podaci
+            $user1 = mysqli_fetch_assoc($results1);
+            $user2 = mysqli_fetch_assoc($results2);
+            //$ime= "";
+            if ($user1 != 0 && $user2 == 0)
+            {
+              $ime = $user1['ime'];
+              $prezime= $user1['prezime'];
+            }else {
+              $ime=$user2['ime'];
+              $prezime= $user2['prezime'];
+            }
+            if(mysqli_num_rows($results1) == 1 || mysqli_num_rows($results2) == 1 ) {
+
+                $_SESSION['ime'] = $ime;
+                $_SESSION['prezime'] = $prezime;
                 $_SESSION['email'] = $email;
                 $_SESSION['uspeh'] = "Ulogovani ste.";
+
                 header('location: index.php');
             }else {
                 array_push($errors, "Pogrešan email/lozinka.");
+
             }
         }
     }
 
-    
+
     $db->close();
 ?>
