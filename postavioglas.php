@@ -1,4 +1,22 @@
+<?php
+include('models\konfigl.php');
+  session_start();
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: login.php");
+  }
 
+  $provera=$_SESSION['email'];
+  $klauzula1 = "SELECT * FROM stanovi_korisnici WHERE email='$provera' ";
+  $klauzula2 = "SELECT * FROM izdavaci_stanova WHERE email='$provera'";
+  $rezultat1 = mysqli_query($db, $klauzula1);
+  $rezultat2 = mysqli_query($db,$klauzula2);
+  $korisnik1 = mysqli_fetch_assoc($rezultat1);
+  $korisnik2 = mysqli_fetch_assoc($rezultat2);
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
