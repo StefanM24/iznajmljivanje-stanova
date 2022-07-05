@@ -211,7 +211,7 @@
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form  method="post" action="registration.php" name="signup" id="signupForm" novalidate="novalidate">
+                        <form  method="post" action="kontroler\registration.php" name="signup" id="signupForm" novalidate="novalidate">
                             <? php include('kontroler\errors.php'); ?>
                             <div class="control-group">
                                 <label>Odaberite vaš korisnički status</label><br>

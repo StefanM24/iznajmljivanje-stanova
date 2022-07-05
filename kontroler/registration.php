@@ -2,7 +2,17 @@
     session_start();
 
     //  include('models\config.php');
-    include('models\konfigl.php');
+    //include('models\konfigl.php');
+    $serverl="localhost";
+    $userl="root";
+    $passl="";
+    $bazal='db1';
+
+    $db = mysqli_connect($serverl, $userl, $passl, $bazal);
+
+    if ($db->connect_error) {
+      die("Connection failed: " . $db->connect_error);
+    }
     $errors = array();
 
 
@@ -42,12 +52,15 @@ if (isset($_POST['reg_user'])) {
               $password = md5($password_1); //kriptovanje lozinke pre cuvanja
               $query = "INSERT INTO izdavaci_stanova (ime, prezime, email, lozinka) VALUES('$ime','$prezime', '$email', '$password')";
               mysqli_query($db, $query);   echo "greska br10";
+              $_SESSION['ime'] = $ime;
+              $_SESSION['prezime'] = $prezime;
               $_SESSION['email'] = $email;
               $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
-              header('location: index.php');
+                header('location: ..\index.php');
             }
           }
-          if ( $korisnik == "stanar") {
+
+          elseif ( $korisnik == "stanar") {
                 $ime = mysqli_real_escape_string($db, $_POST['ime']);
                 $prezime = mysqli_real_escape_string($db, $_POST['prezime']);
                 $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -82,17 +95,17 @@ if (isset($_POST['reg_user'])) {
                     $query = "INSERT INTO stanovi_korisnici (ime, prezime, email, lozinka) VALUES('$ime','$prezime', '$email', '$password')";
 
                     mysqli_query($db, $query);
+                    $_SESSION['ime'] = $ime;
+                    $_SESSION['prezime'] = $prezime;
                     $_SESSION['email'] = $email;
                     $_SESSION['uspeh'] = "Uspešno ste ulogovani.";
-                    header('location: index.php');
+                    header('location: ..\index.php');
                 }
             }
 
 }
 
 
-
-       //registracija ljudi koji traze stan
 
 
 
@@ -118,7 +131,7 @@ if (isset($_POST['reg_user'])) {
             //pokušati da se nađe način kako sad iz rezultata da se izmu podaci
             $user1 = mysqli_fetch_assoc($results1);
             $user2 = mysqli_fetch_assoc($results2);
-            //$ime= "";
+
             if ($user1 != 0 && $user2 == 0)
             {
               $ime = $user1['ime'];
