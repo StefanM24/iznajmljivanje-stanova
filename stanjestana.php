@@ -1,5 +1,7 @@
 <?php
 include('models\konfigl.php');
+include('models\stanovi.php');
+include('models\korisnici.php');
   session_start();
   if (isset($_GET['logout'])) {
   	session_destroy();
@@ -14,6 +16,18 @@ include('models\konfigl.php');
   $rezultat2 = mysqli_query($db,$klauzula2);
   $korisnik1 = mysqli_fetch_assoc($rezultat1);
   $korisnik2 = mysqli_fetch_assoc($rezultat2);
+
+  //koriscenje klase korisnik za izvlacenje podataka
+  $vlasnik = new Korisnici();
+  $vlasnik->uzkor($korisnik2);
+
+  echo "<br><br>";
+  //korisceje klase stan za personalizaciju stanova 
+  $stan = new Stan();
+  $query="SELECT * FROM stanovi WHERE idvlasnika='{$vlasnik->rekor()}' ";
+  $rezultat = mysqli_query($db,$query);
+  $stan1 = mysqli_fetch_assoc($rezultat);
+  $stan->uzstan($stan1);
 
 
 ?>
@@ -183,13 +197,13 @@ include('models\konfigl.php');
         <div class="container py-5">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Blog Detail</h1>
+                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Stanje stana</h1>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-outline-primary" href="">Home</a>
+                        <a class="btn btn-outline-primary" href="">Početna</a>
                         <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Blog Detail</a>
+                        <a class="btn btn-outline-primary disabled" href="">Stanje stana </a>
                     </div>
                 </div>
             </div>
@@ -203,8 +217,8 @@ include('models\konfigl.php');
         <div class="row pt-5">
             <div class="col-lg-8">
                 <div class="d-flex flex-column text-left mb-4">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Blog Detail Page</h6>
-                    <h1 class="mb-4 section-title">Diam dolor est ipsum clita lorem</h1>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Detalji</h6>
+                    <h1 class="mb-4 section-title"><?php echo $stan->restan('nazivstana') ?></h1>
                     <div class="d-index-flex mb-2">
                         <span class="mr-3"><i class="fa fa-user text-primary"></i> Admin</span>
                         <span class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</span>
@@ -213,7 +227,8 @@ include('models\konfigl.php');
                 </div>
 
                 <div class="mb-5">
-                    <img class="img-fluid w-100 mb-4" src="img/carousel-1.jpg" alt="Image">
+                  <?php echo '<img class="img-fluid w-100 mb-4" src="img/'.$stan->restan('nazivslike').'" alt="Image">'; ?>
+
                     <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero.</p>
                     <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores vero stet consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit nonumy kasd diam dolores, sanctus lorem kasd duo dolor dolor vero sit et. Labore ipsum duo sanctus amet eos et. Consetetur no sed et aliquyam ipsum justo et, clita lorem sit vero amet amet est dolor elitr, stet et no diam sit. Dolor erat justo dolore sit invidunt.</p>
                     <h2 class="mb-4">Est dolor lorem et ea</h2>
@@ -280,7 +295,7 @@ include('models\konfigl.php');
                     <div class="media mb-4">
                         <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                         <div class="media-body">
-                            <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
+                            <h6><?php echo "{$_SESSION['ime']} {$_SESSION['prezime']}"; ?> <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
                             <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
                             <button class="btn btn-sm btn-light">Reply</button>
                         </div>
@@ -288,13 +303,13 @@ include('models\konfigl.php');
                     <div class="media mb-4">
                         <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                         <div class="media-body">
-                            <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
+                            <h6><?php echo "{$_SESSION['ime']} {$_SESSION['prezime']}"; ?> <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
                             <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
                             <button class="btn btn-sm btn-light">Reply</button>
                             <div class="media mt-4">
                                 <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                 <div class="media-body">
-                                    <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
+                                    <h6><?php echo "{$_SESSION['ime']} {$_SESSION['prezime']}"; ?> <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
                                     <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor consetetur at sit.</p>
                                     <button class="btn btn-sm btn-light">Reply</button>
                                 </div>
@@ -333,7 +348,7 @@ include('models\konfigl.php');
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <div class="d-flex flex-column text-center bg-secondary mb-5 py-5 px-4">
                     <img src="img/user.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
-                    <h3 class="text-primary mb-3">John Doe</h3>
+                    <h3 class="text-primary mb-3"><?php echo "{$_SESSION['ime']} {$_SESSION['prezime']}"; ?></h3>
                     <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum, ipsum ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.</p>
                 </div>
                 <div class="mb-5">
@@ -348,29 +363,34 @@ include('models\konfigl.php');
                     </form>
                 </div>
                 <div class="mb-5">
-                    <h3 class="mb-4 section-title">Categories</h3>
-                    <ul class="list-group">
+                    <h3 class="mb-4 section-title">Detalji</h3>
+                    <?php echo '<ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Web Design
-                            <span class="badge badge-primary badge-pill">150</span>
+                            Kvadratura
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('kvadratura').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Web Development
-                            <span class="badge badge-primary badge-pill">131</span>
+                            Vrsta stana:
+                              <span class="badge badge-primary badge-pill">'.$stan->restan('vrstastana').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Online Marketing
-                            <span class="badge badge-primary badge-pill">78</span>
+                            Sprat
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('sprat').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Keyword Research
-                            <span class="badge badge-primary badge-pill">56</span>
+                            Cena
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('cena').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Email Marketing
-                            <span class="badge badge-primary badge-pill">98</span>
+                            Cena
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('cena').'</span>
                         </li>
-                    </ul>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Stanje
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('namesten').'</span>
+                        </li>
+                    </ul>' ?>
+
                 </div>
                 <div class="mb-5">
                     <img src="img/blog-1.jpg" alt="" class="img-fluid">
