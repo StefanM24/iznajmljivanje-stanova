@@ -106,7 +106,8 @@ include('models\konfigl.php');
                           echo '<a href="oglasi.php" class="nav-item nav-link">Oglasi</a>
                           <a href="postavioglas.php" class="nav-item nav-link">Postavi Oglas</a>';
                         }elseif ($korisnik2 != 0 && $korisnik1 == 0) {
-                          echo '<a href="#" class="nav-item nav-link">Stanje stana</a>';
+                          echo '<a href="stanjestana.php" class="nav-item nav-link">Stanje stana</a>
+                          <a href="postavioglas.php" class="nav-item nav-link">Postavi Oglas</a>';
                         }
                         ?>
 
