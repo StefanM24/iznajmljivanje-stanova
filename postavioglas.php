@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -198,10 +200,10 @@
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form  method="post" action="registration.php" name="add" id="addForm" novalidate="novalidate">
-                            <? php include(errors.php); ?>
+                        <form  method="post" name="add_ogl" id="addForm" novalidate="novalidate">
+                            
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="naslov" name="naslov" placeholder="Naslov oglasa" required="required" data-validation-required-message="Ovo polje je obavezno" />
+                                <input type="text" class="form-control p-4"  name="naslov" placeholder="Naslov oglasa" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -246,9 +248,9 @@
                             </div>
                             <div class="control-group">
                                 <label for="staragradnja"><h5>Stara gradnja</h5></label>
-                                <input type="radio" name="vrstagradnje" id="staragradnja" value="staragradnja"><br>
+                                <input type="radio" name="vrstagradnje" id="staragradnja" value="stara gradnja"><br>
                                 <label for="novagradnja"><h5>Nova gradnja</h5></label>
-                                <input type="radio" name="vrstagradnje" id="novagradnja" value="novagradnja">
+                                <input type="radio" name="vrstagradnje" id="novagradnja" value="nova gradnja">
 
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -256,14 +258,14 @@
                                 <label for="uknjizen">
                                     <h5>Uknjižen</h5>
                                 </label>
-                                <input type="checkbox" name="uknjizen" id="uknjizen" value="uknjizen">
+                                <input type="checkbox" name="uknjizen" id="uknjizen" value="Da">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
                                 <label for="namesten">
                                     <h5>Namešten</h5>
                                 </label>
-                                <input type="checkbox" name="namesten" id="namesten" value="namesten">
+                                <input type="checkbox" name="namesten" id="namesten" value="Da">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -309,9 +311,8 @@
                                 </form>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <!-- DODATI I FORMU ZA UPLOAD!!!!!!!! -->
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="reg_user">Postavi oglas</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="nesto">Postavi oglas</button>
                             </div>
                             <!-- <p>Već imate nalog? <a href="login.php"><b>Ulogujte se</b></a></p> -->
                             <p class="help-block text-danger"></p>
@@ -404,3 +405,32 @@
 </body>
 
 </html>
+
+
+<?php
+    if(isset($_POST['naslov'])) {
+        $namesten="Ne";
+        if(isset($_POST['namesten'])) {
+            $namesten=$_POST['namesten'];
+        }
+        $uknjizen="Ne";
+        if(isset($_POST['uknjizen'])) {
+            $uknjizen=$_POST['uknjizen'];
+        }
+        $data = "Naslov oglasa: " . $_POST['naslov'] . "\r\n" . "Adresa: " . $_POST['adresa'] . "\r\n" . "Vrsta stana: " . 
+        $_POST['vrsta'] . "\r\n" . "Kvadratura: " . $_POST['kvadratura'] . "\r\n" . "Sprat: " . $_POST['sprat'] . "\r\n" . "Cena: " . 
+        $_POST['cena'] . "\r\n" . "Vrsta gradnje: " . $_POST['vrstagradnje'] . "\r\n" . "Uknjižen: " . $uknjizen . "\r\n" . 
+        "Namešten: " . $namesten . "\r\n" . "Dodatna opremljenost: " . $_POST['garaza'] . "," . $_POST['lift'] . "," . $_POST['bazen'] . 
+        "," . $_POST['igraliste'] . "," . $_POST['obezbedjenje'] . "," . $_POST['recepcija'] . "," . $_POST['terasa'];
+        $ret = file_put_contents('podaci.txt', $data, FILE_APPEND | LOCK_EX);
+        if($ret === false) {
+            die('Desila se greška u ispisivanju fajla.');
+        }
+        else {
+            echo "$ret bytes written to file";
+        }
+    }
+    else {
+    die('no post data to process');
+    }
+?>
