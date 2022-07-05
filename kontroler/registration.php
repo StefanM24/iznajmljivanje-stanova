@@ -2,7 +2,7 @@
     session_start();
 
     //  include('models\config.php');
-    //include('models\konfigl.php');
+    include('models\konfigl.php');/*
     $serverl="localhost";
     $userl="root";
     $passl="";
@@ -12,7 +12,7 @@
 
     if ($db->connect_error) {
       die("Connection failed: " . $db->connect_error);
-    }
+    }*/
     $errors = array();
 
 

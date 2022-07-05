@@ -1,10 +1,21 @@
 <?php
+include('models\konfigl.php');
   session_start();
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['email']);
   	header("location: login.php");
   }
+
+  $provera=$_SESSION['email'];
+  $klauzula1 = "SELECT * FROM stanovi_korisnici WHERE email='$provera' ";
+  $klauzula2 = "SELECT * FROM izdavaci_stanova WHERE email='$provera'";
+  $rezultat1 = mysqli_query($db, $klauzula1);
+  $rezultat2 = mysqli_query($db,$klauzula2);
+  $korisnik1 = mysqli_fetch_assoc($rezultat1);
+  $korisnik2 = mysqli_fetch_assoc($rezultat2);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,33 +100,35 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Početna</a>
                         <a href="service.php" class="nav-item nav-link">Usluge</a>
-                        <a href="project.php" class="nav-item nav-link">Projekti</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.php" class="dropdown-item">Blog Grid</a>
-                                <a href="single.php" class="dropdown-item">Blog Detail</a>
-                            </div>
-                        </div>
-                        <a href="contact.php" class="nav-item nav-link">Kontakt</a>
+                        <?php
+                        if ($korisnik1 != 0 && $korisnik2 == 0)
+                        {
+                          echo '<a href="oglasi.php" class="nav-item nav-link">Oglasi</a>
+                          <a href="postavioglas.php" class="nav-item nav-link">Postavi Oglas</a>';
+                        }elseif ($korisnik2 != 0 && $korisnik1 == 0) {
+                          echo '<a href="#" class="nav-item nav-link">Stanje stana</a>';
+                        }
+                        ?>
+
+
                         <a href="about.php" class="nav-item nav-link">O nama</a>
                         <?php
-                            if(isset($_SESSION["email"])) {
-                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
-                            }
-                            else{
-                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
-                            }
-                        ?>
-                        <?php
 
-                            if(isset($_SESSION["email"])) {
+                              if(isset($_SESSION["email"])) {
+                                echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
+                              }
+                              else{
+                                echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
+                              }
+
+
+                              if(isset($_SESSION["email"])) {
                                 echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['ime'].' '.$_SESSION['prezime'].'</p>';
 
-                            }
-                            else{
+                              }
+                              else{
                                 echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
-                            }
+                              }
                         ?>
 
 
