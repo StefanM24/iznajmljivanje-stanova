@@ -1,28 +1,11 @@
-<?php
-include('models\konfigl.php');
-  session_start();
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['email']);
-  	header("location: login.php");
-  }
-
-  $provera=$_SESSION['email'];
-  $klauzula1 = "SELECT * FROM stanovi_korisnici WHERE email='$provera' ";
-  $klauzula2 = "SELECT * FROM izdavaci_stanova WHERE email='$provera'";
-  $rezultat1 = mysqli_query($db, $klauzula1);
-  $rezultat2 = mysqli_query($db,$klauzula2);
-  $korisnik1 = mysqli_fetch_assoc($rezultat1);
-  $korisnik2 = mysqli_fetch_assoc($rezultat2);
 
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Izdavanje stanova</title>
+    <title>iDESIGN - Interior Design HTML Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -31,7 +14,7 @@ include('models\konfigl.php');
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -90,7 +73,7 @@ include('models\konfigl.php');
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container position-relative" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
+            <a href="" class="navbar-brand">
                     <h1 class="m-0 display-5 text-white"><span class="text-primary">iznajmi</span>STAN</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -100,39 +83,27 @@ include('models\konfigl.php');
                     <div class="navbar-nav ml-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Početna</a>
                         <a href="service.php" class="nav-item nav-link">Usluge</a>
-                        <?php
-                        if ($korisnik1 != 0 && $korisnik2 == 0)
-                        {
-                          echo '<a href="oglasi.php" class="nav-item nav-link">Oglasi</a>
-                          <a href="postavioglas.php" class="nav-item nav-link">Postavi Oglas</a>';
-                        }elseif ($korisnik2 != 0 && $korisnik1 == 0) {
-                          echo '<a href="stanjestana.php" class="nav-item nav-link">Stanje stana</a>
-                          <a href="postavioglas.php" class="nav-item nav-link">Postavi Oglas</a>';
-                        }
-                        ?>
-
-
+                        <a href="oglasi.php" class="nav-item nav-link">Oglasi</a>
+                        <a href="postavioglas.php" class="nav-item nav-link">Postavi oglas</a>
                         <a href="about.php" class="nav-item nav-link">O nama</a>
                         <?php
-
-                              if(isset($_SESSION["email"])) {
+                            if(isset($_SESSION["email"])) {
                                 echo '<a href="index.php? logout='. 1 .'" class="nav-item nav-link">Log out</a>';
-                              }
-                              else{
+                            }
+                            else{
                                 echo '<a href="signup.php" class="nav-item nav-link">Sign up</a>';
-                              }
+                            }
+                        ?>
+                        <?php
 
-
-                              if(isset($_SESSION["email"])) {
+                            if(isset($_SESSION["email"])) {
                                 echo '<p class="nav-item nav-link">Dobrodosli<br>'.$_SESSION['ime'].' '.$_SESSION['prezime'].'</p>';
 
-                              }
-                              else{
+                            }
+                            else{
                                 echo '<a href="login.php" class="nav-item nav-link">Log in</a>';
-                              }
+                            }
                         ?>
-
-
                     </div>
                 </div>
             </nav>
@@ -229,10 +200,10 @@ include('models\konfigl.php');
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form  method="post" action="registration.php" name="add" id="addForm" novalidate="novalidate">
-                            <? php include(errors.php); ?>
+                        <form  method="post" name="add_ogl" id="addForm" novalidate="novalidate">
+                            
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="naslov" name="naslov" placeholder="Naslov oglasa" required="required" data-validation-required-message="Ovo polje je obavezno" />
+                                <input type="text" class="form-control p-4"  name="naslov" placeholder="Naslov oglasa" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -277,9 +248,9 @@ include('models\konfigl.php');
                             </div>
                             <div class="control-group">
                                 <label for="staragradnja"><h5>Stara gradnja</h5></label>
-                                <input type="radio" name="vrstagradnje" id="staragradnja" value="staragradnja"><br>
+                                <input type="radio" name="vrstagradnje" id="staragradnja" value="stara gradnja"><br>
                                 <label for="novagradnja"><h5>Nova gradnja</h5></label>
-                                <input type="radio" name="vrstagradnje" id="novagradnja" value="novagradnja">
+                                <input type="radio" name="vrstagradnje" id="novagradnja" value="nova gradnja">
 
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -287,14 +258,14 @@ include('models\konfigl.php');
                                 <label for="uknjizen">
                                     <h5>Uknjižen</h5>
                                 </label>
-                                <input type="checkbox" name="uknjizen" id="uknjizen" value="uknjizen">
+                                <input type="checkbox" name="uknjizen" id="uknjizen" value="Da">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
                                 <label for="namesten">
                                     <h5>Namešten</h5>
                                 </label>
-                                <input type="checkbox" name="namesten" id="namesten" value="namesten">
+                                <input type="checkbox" name="namesten" id="namesten" value="Da">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
@@ -340,9 +311,8 @@ include('models\konfigl.php');
                                 </form>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <!-- DODATI I FORMU ZA UPLOAD!!!!!!!! -->
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="reg_ogl">Postavi oglas</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton"  name="nesto">Postavi oglas</button>
                             </div>
                             <!-- <p>Već imate nalog? <a href="login.php"><b>Ulogujte se</b></a></p> -->
                             <p class="help-block text-danger"></p>
@@ -435,3 +405,32 @@ include('models\konfigl.php');
 </body>
 
 </html>
+
+
+<?php
+    if(isset($_POST['naslov'])) {
+        $namesten="Ne";
+        if(isset($_POST['namesten'])) {
+            $namesten=$_POST['namesten'];
+        }
+        $uknjizen="Ne";
+        if(isset($_POST['uknjizen'])) {
+            $uknjizen=$_POST['uknjizen'];
+        }
+        $data = "Naslov oglasa: " . $_POST['naslov'] . "\r\n" . "Adresa: " . $_POST['adresa'] . "\r\n" . "Vrsta stana: " . 
+        $_POST['vrsta'] . "\r\n" . "Kvadratura: " . $_POST['kvadratura'] . "\r\n" . "Sprat: " . $_POST['sprat'] . "\r\n" . "Cena: " . 
+        $_POST['cena'] . "\r\n" . "Vrsta gradnje: " . $_POST['vrstagradnje'] . "\r\n" . "Uknjižen: " . $uknjizen . "\r\n" . 
+        "Namešten: " . $namesten . "\r\n" . "Dodatna opremljenost: " . $_POST['garaza'] . "," . $_POST['lift'] . "," . $_POST['bazen'] . 
+        "," . $_POST['igraliste'] . "," . $_POST['obezbedjenje'] . "," . $_POST['recepcija'] . "," . $_POST['terasa'];
+        $ret = file_put_contents('podaci.txt', $data, FILE_APPEND | LOCK_EX);
+        if($ret === false) {
+            die('Desila se greška u ispisivanju fajla.');
+        }
+        else {
+            echo "$ret bytes written to file";
+        }
+    }
+    else {
+    die('no post data to process');
+    }
+?>

@@ -22,7 +22,7 @@ include('models\korisnici.php');
   $vlasnik->uzkor($korisnik2);
 
   echo "<br><br>";
-  //korisceje klase stan za personalizaciju stanova 
+  //korisceje klase stan za personalizaciju stanova
   $stan = new Stan();
   $query="SELECT * FROM stanovi WHERE idvlasnika='{$vlasnik->rekor()}' ";
   $rezultat = mysqli_query($db,$query);
@@ -382,8 +382,8 @@ include('models\korisnici.php');
                             <span class="badge badge-primary badge-pill">'.$stan->restan('cena').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Cena
-                            <span class="badge badge-primary badge-pill">'.$stan->restan('cena').'</span>
+                            Uknjizen
+                            <span class="badge badge-primary badge-pill">'.$stan->restan('uknjizen').'</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Stanje

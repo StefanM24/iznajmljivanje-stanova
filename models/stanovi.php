@@ -1,5 +1,4 @@
 <?php
-include('models\konfigl.php');
   class Stan
   {
     public $id;
@@ -35,8 +34,9 @@ include('models\konfigl.php');
 
       if ($podaci['uknjizen']==0) {$this->uknjizen="Nije uknjizen"; }
       else {$this->uknjizen="Uknjizen"; }
+
       if ($podaci['namesten']==0) {$this->namesten="Nije namesten"; }
-      else {$this->namesten= "Namesten";     }
+      else {$this->namesten= "Namesten";}
     }
 
     public function restan($podatak)
