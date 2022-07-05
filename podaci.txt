@@ -1,0 +1,22 @@
+Naslov oglasa: nesko naziv
+Adresa: neka adresa
+Vrsta stana: dvosoban
+Kvadratura: 60
+Sprat: 9
+Cena: 1500
+Vrsta gradnje: nova gradnja
+Uknjižen: Da
+Namešten: Da
+Dodatna opremljenost: garaza,lift,bazen,igraliste,obezbedjenje,recepcija,terasa
+ 
+Naslov oglasa: nesko naziv1
+Adresa: neka adresa2
+Vrsta stana: petosoban+
+Kvadratura: 150
+Sprat: 41
+Cena: 3000000000000000000000000000000000000
+Vrsta gradnje: nova gradnja
+Uknjižen: Da
+Namešten: Da
+Dodatna opremljenost: garaza,lift,bazen,,obezbedjenje,recepcija,terasa
+ 

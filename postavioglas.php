@@ -14,7 +14,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -201,7 +201,7 @@
                     <div class="contact-form">
                         <div id="success"></div>
                         <form  method="post" name="add_ogl" id="addForm" novalidate="novalidate">
-                            
+
                             <div class="control-group">
                                 <input type="text" class="form-control p-4"  name="naslov" placeholder="Naslov oglasa" required="required" data-validation-required-message="Ovo polje je obavezno" />
                                 <p class="help-block text-danger"></p>
@@ -417,11 +417,11 @@
         if(isset($_POST['uknjizen'])) {
             $uknjizen=$_POST['uknjizen'];
         }
-        $data = "Naslov oglasa: " . $_POST['naslov'] . "\r\n" . "Adresa: " . $_POST['adresa'] . "\r\n" . "Vrsta stana: " . 
-        $_POST['vrsta'] . "\r\n" . "Kvadratura: " . $_POST['kvadratura'] . "\r\n" . "Sprat: " . $_POST['sprat'] . "\r\n" . "Cena: " . 
-        $_POST['cena'] . "\r\n" . "Vrsta gradnje: " . $_POST['vrstagradnje'] . "\r\n" . "Uknjižen: " . $uknjizen . "\r\n" . 
-        "Namešten: " . $namesten . "\r\n" . "Dodatna opremljenost: " . $_POST['garaza'] . "," . $_POST['lift'] . "," . $_POST['bazen'] . 
-        "," . $_POST['igraliste'] . "," . $_POST['obezbedjenje'] . "," . $_POST['recepcija'] . "," . $_POST['terasa'];
+        $data = "Naslov oglasa: " . $_POST['naslov'] . "\r\n" . "Adresa: " . $_POST['adresa'] . "\r\n" . "Vrsta stana: " .
+        $_POST['vrsta'] . "\r\n" . "Kvadratura: " . $_POST['kvadratura'] . "\r\n" . "Sprat: " . $_POST['sprat'] . "\r\n" . "Cena: " .
+        $_POST['cena'] . "\r\n" . "Vrsta gradnje: " . $_POST['vrstagradnje'] . "\r\n" . "Uknjižen: " . $uknjizen . "\r\n" .
+        "Namešten: " . $namesten . "\r\n" . "Dodatna opremljenost: " . $_POST['garaza'] . "," . $_POST['lift'] . "," . $_POST['bazen'] .
+        "," . $_POST['igraliste'] . "," . $_POST['obezbedjenje'] . "," . $_POST['recepcija'] . "," . $_POST['terasa']."\r\n \r\n";
         $ret = file_put_contents('podaci.txt', $data, FILE_APPEND | LOCK_EX);
         if($ret === false) {
             die('Desila se greška u ispisivanju fajla.');
